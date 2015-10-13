@@ -33,6 +33,8 @@ Finally, initiate the generator:
 
 ```bash
 yo alitv
+yo alitv:lib
+yo alitv:page
 ```
 
 ### Getting To Know Yeoman
