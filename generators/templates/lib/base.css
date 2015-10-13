@@ -1,0 +1,154 @@
+/** 清除内外边距 **/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+/** 设置默认字体 **/
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px/1.5 tahoma, arial, 'Heiti SC', '微软雅黑', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+/* 将斜体扶正 */
+code,
+kbd,
+pre,
+samp {
+  font-family: courier new, courier, monospace;
+}
+/* 统一等宽字体 */
+small {
+  font-size: 12px;
+}
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+/** 重置列表元素 **/
+ul,
+ol {
+  list-style: none;
+}
+/** 重置文本格式元素 **/
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  text-decoration: underline;
+}
+sup {
+  vertical-align: text-top;
+}
+/* 重置，减少对行高的影响 */
+sub {
+  vertical-align: text-bottom;
+}
+/** 重置表单元素 **/
+legend {
+  color: #000;
+}
+/* for ie6 */
+fieldset,
+img {
+  border: 0;
+}
+/* img 搭车：让链接里的 img 无边框 */
+img {
+  vertical-align: bottom;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+/* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+/** 重置表格元素 **/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 重置 HTML5 元素 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+mark {
+  background: #ff0;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+/* Hides from IE-mac */
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+/* End hide from IE-mac */
+body {
+  font: 12px/1.5 tahoma, arial, 'Heiti SC', 'Microsoft Yahei', sans-serif;
+}

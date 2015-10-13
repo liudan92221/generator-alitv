@@ -1,10 +1,10 @@
 {
-  "name": "<%= packageName %>",
+  "name": "test",
   "version": "1.0.0",
   "description": "a clam project",
   "author": {
-    "name": "<%= author %>",
-    "email": "<%= email %>"
+    "name": "震动",
+    "email": ""
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   },
   "license": "ISC",
   "keywords": [
-    "clam", "<%= projectName %>"
+    "clam", "test"
   ],
   "dependencies": {},
   "devDependencies": {
