@@ -1,0 +1,36 @@
+{
+  "name": "generator-alitv",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liudan92221/generator-alitv"
+  },
+  "author": "刘丹 <liudan92221@gmail.com> (https://github.com/liudan92221)",
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.19.0",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/liudan92221/generator-alitv/issues"
+  },
+  "homepage": "https://github.com/liudan92221/generator-alitv",
+  "directories": {
+    "test": "test"
+  }
+}
