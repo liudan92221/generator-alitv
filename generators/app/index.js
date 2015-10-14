@@ -103,6 +103,10 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('gulpfile.js'),
         this.destinationPath('gulpfile.js')
       );
+      this.fs.copy(
+        this.templatePath('gulp'),
+        this.destinationPath('gulp')
+      );
       this.template(
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
@@ -125,6 +129,8 @@ module.exports = yeoman.generators.Base.extend({
       this.writing._component.bind(this)();
       this.mkdir('src/page');
       this.mkdir('src/util');
+      this.mkdir('src/service');
+      this.mkdir('src/widget');
       this.mkdir('doc');
       this.mkdir('build');
     },
