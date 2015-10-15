@@ -36,6 +36,7 @@ yo alitv
 yo alitv:lib
 yo alitv:component
 yo alitv:page
+yo alitv:test
 ```
 
 ### Getting To Know Yeoman

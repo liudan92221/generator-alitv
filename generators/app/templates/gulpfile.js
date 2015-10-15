@@ -44,3 +44,6 @@ gulp.task('server', function() {
   gulpMap['server'](options);
   gulpMap['watch'](options, pages);
 });
+
+// 启动test
+gulpMap['test']();
