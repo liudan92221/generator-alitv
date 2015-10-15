@@ -34,6 +34,7 @@ Finally, initiate the generator:
 ```bash
 yo alitv
 yo alitv:lib
+yo alitv:component
 yo alitv:page
 ```
 
