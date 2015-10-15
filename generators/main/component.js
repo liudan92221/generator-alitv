@@ -1,6 +1,4 @@
 'use strict';
-var path = require('path');
-
 var templates = require('./main').templates;
 
 module.exports = {
@@ -10,10 +8,18 @@ module.exports = {
     cb();
   },
 
-  create: function() {
-    this.fs.copy(
+  make: function() {
+    this.template(
       this.templatePath(templates+'component'),
       this.destinationPath('src/component')
     );
+  },
+
+  create: function() {
+    this.mkdir('src/component');
+    //this.fs.copy(
+    //  this.templatePath(templates+'component'),
+    //  this.destinationPath('src/component')
+    //);
   }
 };

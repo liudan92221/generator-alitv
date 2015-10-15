@@ -126,11 +126,11 @@ module.exports = yeoman.generators.Base.extend({
 
       this.mkdir('src');
       this.writing._lib.bind(this)();
-      this.writing._component.bind(this)();
+      //this.writing._component.bind(this)();
+      this.mkdir('src/component');
       this.mkdir('src/page');
       this.mkdir('src/util');
       this.mkdir('src/service');
-      this.mkdir('src/widget');
       this.mkdir('doc');
       this.mkdir('build');
     },
@@ -140,7 +140,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     _component: function() {
-      component.create.bind(this)();
+      component.make.bind(this)();
     },
 
     projectfiles: function () {
