@@ -6,6 +6,7 @@ var webpack = require('webpack');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var path = require('path');
+var footer = require('gulp-footer');
 
 module.exports = function(options, page) {
   var entry = {};
@@ -32,6 +33,7 @@ module.exports = function(options, page) {
         loader: 'style!css!less'
       }]
     },
+    devtool: 'source-map',
     plugins: [new webpack.optimize.DedupePlugin()]
   };
 
@@ -52,6 +54,7 @@ module.exports = function(options, page) {
       .pipe(rename({
         suffix: '-min'
       }))
+      .pipe(footer('//# sourceMappingURL='+options.main_js+'.map'))
       .pipe(gulp.dest('build/page/' + page));
     gutil.log(gutil.colors.green('Minify JS: build/page/' + page + '/index-min.js'));
   });

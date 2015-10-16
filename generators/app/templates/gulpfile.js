@@ -11,6 +11,7 @@ var options = {
   version: pkg.version,
   main_js: 'index.js',
   main_less: 'index.less',
+  main_css: 'index.css',
   main_html: 'index.html'
 };
 
