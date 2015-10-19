@@ -63,6 +63,12 @@ gulp test         // 启动测试文件中测试代码
         └── build            // 项目构建目录，目录结构与src保持一致
 ```
 
+### 特性
+* webpack中利用babel解析es2015为es5和component文件中react组建，代码位置：gulp/webpack.js
+* gulp server开启之后，watch监听开启，单个页面的改变之后针对单个页面的构建，代码位置：gulp/watch.js
+* 构建完成之后，build文件中每个页面文件的css和js文件都会生成一个map文件，支持source-map的浏览器可以轻松的定位到源文件
+* test文件夹中可以编写自己的测试用例，运行测试用例可以用个终端命令gulp test运行，也可以通过测试文件夹中的html文件在浏览器中运行，代码位置：gulp/test.js
+
 ## License
 
 MIT

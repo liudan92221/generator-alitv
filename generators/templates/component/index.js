@@ -1,3 +1,4 @@
+require('./index.less');
 class <%= componentName %> extends React.Component {
   constructor() {
   super();
