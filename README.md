@@ -32,19 +32,36 @@ npm install -g generator-alitv
 Finally, initiate the generator:
 
 ```bash
-yo alitv
-yo alitv:lib
-yo alitv:component
-yo alitv:page
-yo alitv:test
+yo alitv           // 初始化一个标准的项目，生成其目录结构
+yo alitv:lib       // 初始化一个lib文件中js库
+yo alitv:component // 初始化一个react component文件
+yo alitv:page      // 初始化一个页面
+yo alitv:test      // 初始化一个测试文件
 ```
 
-### Getting To Know Yeoman
+```bash
+gulp              // 进行项目构建
+gulp server       // 开启开发模式的前端服务器，并watch项目文件变化自动构建
+gulp test         // 启动测试文件中测试代码
+```
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
+```bash
+└── project root
+        ├── gulp.js          // gulp的脚本入口文件
+        ├── gulp             // 存放gulp构建相关模块，可根据需要自行修改
+        ├── package.json     // 存放项目基本信息和node的依赖关系配置
+        ├── README.md        // 项目说明文档
+        ├── doc              // 存放生成项目API文档
+        ├── test             // 存放测试文件
+        ├── node_modules     // 存放项目的node模块
+        └── src              // 项目源文件目录
+            ├── component    // 存放react组件文件
+            ├── lib          // 存放基础js和css文件和第三方库
+            ├── page         // 存放demo页面和入口文件，可执行`yo clam:page`生成一个page
+            ├── service      // 存放封装好的ajax调用接口
+            └── util         // 存放应用级别的可重用组件
+        └── build            // 项目构建目录，目录结构与src保持一致
+```
 
 ## License
 

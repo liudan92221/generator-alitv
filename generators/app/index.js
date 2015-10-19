@@ -149,6 +149,7 @@ module.exports = yeoman.generators.Base.extend({
       this.mkdir('src/service');
       this.mkdir('doc');
       this.mkdir('build');
+      this.mkdir('test');
     },
 
     _lib: function() {
