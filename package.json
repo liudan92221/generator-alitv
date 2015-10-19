@@ -1,6 +1,6 @@
 {
   "name": "generator-alitv",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
@@ -22,7 +22,8 @@
   "dependencies": {
     "yeoman-generator": "^0.19.0",
     "chalk": "^1.0.0",
-    "yosay": "^1.0.2"
+    "yosay": "^1.0.2",
+    "urllib": "^2.5.0"
   },
   "devDependencies": {
     "mocha": "*"

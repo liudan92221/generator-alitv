@@ -3,6 +3,7 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require('path');
+var urllib = require('urllib');
 
 var lib = require('../main/lib');
 var component = require('../main/component');
@@ -10,26 +11,41 @@ var component = require('../main/component');
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
+    this.pkg = require(path.join(__dirname, '../../package.json'));
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the polished ' + chalk.red('alitv') + ' generator!'
-    ));
+    this.log(
+      chalk.yellow('正在检查更新...')
+    );
 
-    //var prompts = [{
-    //  type: 'confirm',
-    //  name: 'someOption',
-    //  message: 'Would you like to enable this option?',
-    //  default: true
-    //}];
-    //
-    //this.prompt(prompts, function (props) {
-    //  this.props = props;
-    //  // To access props later use this.props.someOption;
-    //
-    //  done();
-    //}.bind(this));
-    done();
+    urllib.request('http://registry.npmjs.org/generator-alitv/latest', function (err, data, res) {
+      if (err || res.statusCode != 200) {
+        this.log(
+          chalk.red('检查更新出错')
+        );
+      } else {
+        data = JSON.parse(data.toString());
+
+        if (data.version !== this.pkg.version) {
+          this.log(
+            '发现新版本：' + chalk.red(data.version) + ', 当前版本：'+chalk.yellow(this.pkg.version)+'.'
+          );
+          this.log(
+            '版本有更新，建议更新：npm install -g generator-alitv'
+          );
+        } else {
+          this.log(
+            '当前版本为最新版本'
+          );
+        }
+      }
+
+      this.log(yosay(
+        'Welcome to the polished ' + chalk.red('alitv') + ' generator!'
+      ));
+
+      done();
+
+    }.bind(this));
   },
 
   writing: {
