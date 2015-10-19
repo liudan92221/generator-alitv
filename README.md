@@ -52,10 +52,10 @@ gulp test         // 启动测试文件中测试代码
         ├── package.json     // 存放项目基本信息和node的依赖关系配置
         ├── README.md        // 项目说明文档
         ├── doc              // 存放生成项目API文档
-        ├── test             // 存放测试文件
+        ├── test             // 存放测试文件，可执行`yo clam:test`生成一个test
         ├── node_modules     // 存放项目的node模块
         └── src              // 项目源文件目录
-            ├── component    // 存放react组件文件
+            ├── component    // 存放react组件文件，可执行`yo clam:component`生成一个component
             ├── lib          // 存放基础js和css文件和第三方库
             ├── page         // 存放demo页面和入口文件，可执行`yo clam:page`生成一个page
             ├── service      // 存放封装好的ajax调用接口
