@@ -28,6 +28,12 @@ var pages = fs.readdirSync(path.join(__dirname, 'src/page'));
 if (pages.indexOf('.DS_Store') !== -1) {
   pages.splice(pages.indexOf('.DS_Store'), 1);
 }
+if (pages.indexOf('service-worker') !== -1) {
+  pages.splice(pages.indexOf('service-worker'), 1);
+}
+if (pages.indexOf('service-worker.js') !== -1) {
+  pages.splice(pages.indexOf('service-worker.js'), 1);
+}
 
 gulp.task('default', function() {
   del(['build'], function() {
@@ -48,3 +54,8 @@ gulp.task('server', function() {
 
 // 启动test
 gulpMap['test']();
+
+// 编译serviceWorker
+gulp.task('sw', function() {
+  gulpMap['serviceWorker'](options);
+});

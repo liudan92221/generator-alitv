@@ -9,12 +9,13 @@ var path = require('path');
 var footer = require('gulp-footer');
 var fs = require('fs');
 
-module.exports = function(options, page) {
+module.exports = function(options) {
   var entry = {};
   var buildFile = 'index';
-  var exists = fs.existsSync(path.join(__dirname, '../src/page/' + page + '/'+buildFile+'.js'));
+  var swFile = 'service-worker';
+  var exists = fs.existsSync(path.join(__dirname, '../src/page/' + swFile + '/'+buildFile+'.js'));
   if (exists) {
-    entry[page] = './src/page/' + page + '/' + options.main_js;
+    entry[swFile] = './src/page/' + swFile + '/' + options.main_js;
   }
   // webpack配置
   var cfg = {
@@ -27,19 +28,14 @@ module.exports = function(options, page) {
     },
     module: {
       loaders: [{
-        test: /\.css$/,
-        loader: 'style!css'
-      }, {
         test: /\.js$/,
         loader: 'babel'
-      }, {
-        test: /\.less$/,
-        loader: 'style!css!less'
       }]
     },
     devtool: 'source-map',
     plugins: [new webpack.optimize.DedupePlugin()]
   };
+
 
   webpack(cfg, function(err, stats) {
     if (err) throw new gutil.PluginError('webpack:build', err);
@@ -48,9 +44,9 @@ module.exports = function(options, page) {
     }));
 
     // 压缩webpack生成的js文件
-    fs.exists(path.join(__dirname, '../build/page/' + page + '/'+buildFile+'.js'), function(exists) {
+    fs.exists(path.join(__dirname, '../build/page/' + swFile + '/'+buildFile+'.js'), function(exists) {
       if (!exists) {return;}
-      gulp.src('build/page/' + page + '/'+buildFile+'.js')
+      gulp.src('build/page/' + swFile + '/'+buildFile+'.js')
         .pipe(uglify({
           output: {
             ascii_only: true
@@ -60,8 +56,12 @@ module.exports = function(options, page) {
           suffix: '-min'
         }))
         .pipe(footer('//# sourceMappingURL='+options.main_js+'.map'))
-        .pipe(gulp.dest('build/page/' + page));
-      gutil.log(gutil.colors.green('Minify JS: build/page/' + page + '/'+buildFile+'-min.js'));
+        .pipe(gulp.dest('build/page/' + swFile));
+      gutil.log(gutil.colors.green('Minify JS: build/page/' + swFile + '/'+buildFile+'-min.js'));
     });
   });
+  gulp.src('src/page/' + swFile + '/' + options.main_html)
+    .pipe(gulp.dest('build/page/' + swFile));
+  gulp.src('src/page/' + swFile +'.js')
+    .pipe(gulp.dest('build/page'));
 };

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script>
+  if ('serviceWorker' in navigator) {
+    var swScript = '../service-worker.js';
+    navigator.serviceWorker.register(swScript, {scope: '../'})
+      .then(function(registration) {
+        console.log('registration : '+registration.scope);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  } else {
+    console.log('不支持service-workers');
+  }
+</script>
+</body>
+</html>
