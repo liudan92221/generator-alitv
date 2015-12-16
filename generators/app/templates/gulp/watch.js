@@ -6,7 +6,8 @@ var gutil = require('gulp-util');
 var gulpMap = {
   'html': require('./html'),
   'less': require('./less'),
-  'webpack': require('./webpack')
+  'webpack': require('./webpack'),
+  'lib': require('./lib')
 };
 // 从sudo降权，避免build后的文件为root权限
 function unRoot() {
