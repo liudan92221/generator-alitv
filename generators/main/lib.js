@@ -70,6 +70,10 @@ module.exports = {
       this.templatePath(templates+'lib/base.less'),
       this.destinationPath('src/lib/base.less')
     );
+    this.fs.copy(
+      this.templatePath(templates+'lib/js/get-min.js'),
+      this.destinationPath('src/lib/js/get-min.js')
+    );
 
     if (this.react) {
       this.fs.copy(

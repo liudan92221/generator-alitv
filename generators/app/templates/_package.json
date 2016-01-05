@@ -1,7 +1,7 @@
 {
   "name": "<%= packageName %>",
-  "version": "1.0.0",
-  "description": "a clam project",
+  "version": "<%= version %>",
+  "description": "",
   "author": {
     "name": "<%= author %>",
     "email": "<%= email %>"
@@ -16,7 +16,7 @@
   },
   "license": "ISC",
   "keywords": [
-    "clam", "<%= projectName %>"
+    "<%= projectName %>"
   ],
   "dependencies": {},
   "devDependencies": {

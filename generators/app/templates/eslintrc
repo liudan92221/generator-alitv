@@ -1,0 +1,19 @@
+{
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true,
+    "classes": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "strict": 1,
+    "quotes": [1, "single"],
+    "comma-dangle": [1, "never"],
+    "semi": [1, "always"],
+    "no-const-assign": 2
+  }
+}
