@@ -9,6 +9,8 @@ var path = require('path');
 var footer = require('gulp-footer');
 var fs = require('fs');
 
+var xtemplate = require('./xtemplate');
+
 module.exports = function(options, page) {
   var entry = {};
   var buildFile = 'index';
@@ -62,6 +64,8 @@ module.exports = function(options, page) {
         .pipe(footer('//# sourceMappingURL='+options.main_js+'.map'))
         .pipe(gulp.dest('build/page/' + page));
       gutil.log(gutil.colors.green('Minify JS: build/page/' + page + '/'+buildFile+'-min.js'));
+
+      xtemplate(options, page);
     });
   });
 };

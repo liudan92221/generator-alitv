@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!--start 如果只需要适配Blitz内核，可用viewport的方式来自适应不同的分辨率，否则可删除viewport设置-->
+  <meta name="viewport" content="width=1920">
+  <title><%= moduleName %></title>
+  <link rel="stylesheet" href="./index-min.css"/>
+</head>
+<body>
+  <div class="<%= moduleName %> J_Module">
+    <!-- script 放这里 -->
+    <script charset="utf-8">
+      //start 如果要同时适配webkit内核，那么要用rem进行自适应不同分辨率，否则可删除该js代码块
+      var w = document.documentElement.clientWidth / 10;
+      document.getElementsByTagName('html')[0].style['font-size'] = w + 'px';
+    </script>
+    <script charset="utf-8" src="//g.alicdn.com/de/alitv-taobao/1.0.0/lib/js/get-min.js"></script>
+    <div class="module-wrap J_tb_lazyload">
+      <!-- Code -->
+
+      <script charset="utf-8">
+        Get.loaded([
+          // 更新该generator时atv的最新版是1.0.3，请访问atv wiki查看最新版本使用
+          '//g.alicdn.com/de/alitv-jskit/1.0.3/atv-min.js',
+          'index-min.js'
+        ], function() {
+          window.Page.init();
+        }, false, 'UTF-8');
+      </script>
+    </div>
+  </div>
+</body>
+</html>

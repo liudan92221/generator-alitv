@@ -36,6 +36,7 @@ yo alitv           // 初始化一个标准的项目，生成其目录结构
 yo alitv:lib       // 初始化一个lib文件中js库
 yo alitv:component // 初始化一个react component文件
 yo alitv:page      // 初始化一个页面
+yo alitv:xtpl      // 初始化一个xtpl页面
 yo alitv:test      // 初始化一个测试文件
 yo alitv:sw        // 创建service worker文件
 ```
@@ -71,6 +72,7 @@ gulp sw           // 构建service worker文件
 * 构建完成之后，build文件中每个页面文件的css和js文件都会生成一个map文件，支持source-map的浏览器可以轻松的定位到源文件
 * test文件夹中可以编写自己的测试用例，运行测试用例可以用个终端命令gulp test运行，也可以通过测试文件夹中的html文件在浏览器中运行，代码位置：gulp/test.js
 * 增加service worker功能，可以离线缓存资源
+* 支持xtpl模板页面解析以及自定义xtpl模板数据
 
 ## License
 
