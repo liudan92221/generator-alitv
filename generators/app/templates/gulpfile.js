@@ -41,6 +41,7 @@ gulp.task('default', function() {
       gulpMap['html'](options, pages[i]);
       gulpMap['less'](options, pages[i]);
       gulpMap['webpack'](options, pages[i]);
+      gulpMap['assets'](pages[i]);
     }
     gulpMap['lib']();
   });

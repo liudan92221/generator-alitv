@@ -7,7 +7,8 @@ var gulpMap = {
   'html': require('./html'),
   'less': require('./less'),
   'webpack': require('./webpack'),
-  'lib': require('./lib')
+  'lib': require('./lib'),
+  'assets': require('./assets')
 };
 // 从sudo降权，避免build后的文件为root权限
 function unRoot() {
@@ -31,6 +32,7 @@ module.exports = function(options, pages) {
         gulpMap['html'](options, page);
         gulpMap['less'](options, page);
         gulpMap['webpack'](options, page);
+        gulpMap['assets'](page);
 
       });
       watchers[i].on('change', function(event) {
