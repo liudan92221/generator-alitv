@@ -18,7 +18,11 @@
   "keywords": [
     "<%= projectName %>"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@ali/atv-engine": "~1.0.7",
+    "react": "~0.14.7",
+    "react-dom": "~0.14.7"
+  },
   "devDependencies": {
     "xtpl": "~3.2.0",
     "xtemplate": "~4.4.2",
